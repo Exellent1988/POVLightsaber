@@ -4,6 +4,7 @@
 #include "AudioOutput.h"
 #include "sfx/sounds.h"
 #include "SynthSound.h"
+#include "HardwareSerial.h"
 #define _USE_MATH_DEFINES
 #include <cmath>
 
