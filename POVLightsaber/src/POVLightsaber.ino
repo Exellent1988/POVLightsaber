@@ -4,9 +4,11 @@
 #include "AudioOutput.h"
 #include "sfx/sounds.h"
 #include "SynthSound.h"
+#define _USE_MATH_DEFINES
+#include <cmath>
 
-static const int buttonPin = 17;
-static const int ledCount = 144;
+static const int buttonPin = 04;
+static const int ledCount = 58;
 static const int brightness = 128; 
 static const int speed = 3;
 
@@ -103,7 +105,7 @@ void loopSaber(int dt)
     //standing still (correct angle)
     float l = sqrt(gyro.positionA[0] * gyro.positionA[0] + gyro.positionA[1] * gyro.positionA[1] + gyro.positionA[2] * gyro.positionA[2]);
     float rl = 1 / ((l == 0)? 1 : l);
-    angle = angle * 0.9 + acos(rl * gyro.positionA[0]) * 180 / M_PI * 0.1;
+    angle = angle * 0.9 + acos(rl * gyro.positionA[0]) * 180 / 3.1415 * 0.1;
   }
 
   int yi = (int)angle % imageRes[1];
